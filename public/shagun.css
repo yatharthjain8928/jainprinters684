@@ -1,0 +1,127 @@
+/* Jain Shagun storefront page */
+.shagun-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  color:#fff;
+  background:
+    radial-gradient(ellipse at 80% 30%,rgba(223,11,116,.22),transparent 28rem),
+    radial-gradient(ellipse at 7% 95%,rgba(0,164,217,.13),transparent 25rem),
+    linear-gradient(120deg,#0b1730 0%,#17294a 54%,#101e39 100%);
+  padding:72px 0 0;
+}
+.shagun-hero:before{
+  content:'';
+  position:absolute;z-index:-1;right:4%;top:-235px;width:610px;height:610px;border:1px solid rgba(225,198,151,.2);border-radius:50%;
+  box-shadow:0 0 0 35px rgba(255,255,255,.025),0 0 0 78px rgba(255,255,255,.018),0 0 0 125px rgba(223,11,116,.035);
+  animation:jpOrbit 50s linear infinite;
+}
+.shagun-hero:after{
+  content:'';
+  position:absolute;z-index:-1;left:-120px;bottom:40px;width:420px;height:160px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(223,11,116,.14),transparent 68%);filter:blur(20px);
+}
+.shagun-hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;min-height:545px;padding-bottom:65px}
+.shagun-hero-copy{position:relative;z-index:2;padding:15px 0 30px}
+.shagun-kicker{display:inline-flex;align-items:center;gap:10px;color:#f1d7ad;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.shagun-kicker i{width:23px;height:2px;background:linear-gradient(90deg,#e9c17d,#df0b74)}
+.shagun-overline{margin:29px 0 14px;color:#ffafd0;font-size:10px;font-weight:800;letter-spacing:.22em}
+.shagun-hero h1{color:#fff;font-size:clamp(42px,5.4vw,70px);line-height:1.06;margin:0 0 22px}
+.shagun-hero h1 em{font-family:'Playfair Display',serif;color:#f0c88b;font-weight:600}
+.shagun-lead{max-width:580px;color:rgba(255,255,255,.76);font-size:15px;line-height:1.9}
+.shagun-lead strong{color:#fff}
+.shagun-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.shagun-signature{display:flex;align-items:center;gap:11px;margin-top:44px;color:rgba(255,255,255,.6)}
+.shagun-signature span{font:800 10px Manrope,sans-serif;letter-spacing:.22em;color:#f0c88b}
+.shagun-signature i{width:36px;height:1px;background:rgba(240,200,139,.65)}
+.shagun-signature small{font-size:10px;letter-spacing:.08em}
+.shagun-hero-art{min-height:440px;position:relative;display:grid;place-items:center;isolation:isolate}
+.shagun-image-frame{position:relative;z-index:2;width:min(100%,475px);height:430px;padding:9px;border:1px solid rgba(238,202,148,.65);border-radius:180px 180px 26px 26px;background:linear-gradient(145deg,rgba(255,255,255,.26),rgba(255,255,255,.045));box-shadow:0 30px 85px rgba(0,0,0,.28);overflow:hidden;transform:rotate(1deg)}
+.shagun-image-frame:before{content:'';position:absolute;z-index:2;inset:9px;border:1px solid rgba(255,255,255,.55);border-radius:172px 172px 19px 19px;pointer-events:none}
+.shagun-image-frame img{width:100%;height:100%;object-fit:cover;border-radius:170px 170px 20px 20px;transition:transform 1s var(--jp-ease)}
+.shagun-hero-art:hover .shagun-image-frame img{transform:scale(1.045)}
+.shagun-art-orbit{position:absolute;z-index:0;border:1px solid rgba(241,211,160,.45);border-radius:50%;pointer-events:none}
+.orbit-one{width:510px;height:510px;animation:jpOrbit 36s linear infinite}
+.orbit-two{width:570px;height:570px;border-style:dashed;opacity:.25;animation:jpOrbit 58s linear infinite reverse}
+.shagun-art-label{position:absolute;z-index:3;left:0;bottom:30px;padding:16px 19px;background:rgba(255,255,255,.94);border:1px solid rgba(184,134,70,.28);border-radius:14px;color:var(--navy);box-shadow:0 18px 48px rgba(0,0,0,.18);backdrop-filter:blur(14px);animation:jpFloat 6s ease-in-out infinite}
+.shagun-art-label small{display:block;color:var(--pink);font-size:8px;font-weight:800;letter-spacing:.16em}
+.shagun-art-label b{display:block;margin-top:4px;font:700 16px 'Playfair Display',serif}
+.shagun-seal{position:absolute;z-index:3;right:0;top:35px;width:78px;height:78px;display:grid;place-items:center;border:1px solid #e8c78c;border-radius:50%;background:rgba(16,30,57,.7);color:#f1d7ad;font:600 28px 'Playfair Display',serif;box-shadow:0 0 0 7px rgba(232,199,140,.08);animation:jpFloat 5s ease-in-out infinite reverse}
+.shagun-hero-bottom{display:flex;justify-content:space-between;gap:15px;padding:17px 24px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.57);font-size:9px;font-weight:700;letter-spacing:.18em}
+.shagun-intro{background:linear-gradient(110deg,#fff 0%,#faf5f1 100%)}
+.shagun-intro-grid{display:grid;grid-template-columns:.45fr 1.55fr;gap:55px;align-items:center}
+.shagun-intro-mark{width:175px;height:175px;border:1px solid rgba(184,134,70,.5);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle,#fff 40%,#f7eee3 100%);box-shadow:0 0 0 11px rgba(184,134,70,.06),0 20px 50px rgba(16,30,57,.08);position:relative}
+.shagun-intro-mark:before,.shagun-intro-mark:after{content:'';position:absolute;inset:9px;border:1px solid rgba(184,134,70,.32);border-radius:50%}
+.shagun-intro-mark:after{inset:18px;border-style:dashed;opacity:.7;animation:jpOrbit 42s linear infinite}
+.shagun-intro-mark span{color:var(--navy);font:600 55px/.95 'Playfair Display',serif;position:relative;z-index:1}
+.shagun-intro-mark small{position:relative;z-index:1;margin-top:8px;color:var(--pink);font-size:8px;letter-spacing:.2em;font-weight:800}
+.shagun-intro-copy h2{margin-top:10px}
+.shagun-intro-copy p{max-width:760px;color:var(--muted);font-size:14px;line-height:1.9}
+.shagun-products{background:#f6f2ed}
+.shagun-product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shagun-product-card{background:#fff;border:1px solid rgba(16,30,57,.08);border-radius:20px;overflow:hidden;box-shadow:0 12px 35px rgba(16,30,57,.055);transition:transform .5s var(--jp-ease),box-shadow .5s ease}
+.shagun-product-card:hover{transform:translateY(-8px);box-shadow:0 25px 65px rgba(16,30,57,.14)}
+.shagun-product-image{height:265px;display:block;position:relative;overflow:hidden;background:#eae1d7}
+.shagun-product-image:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(8,18,37,.45))}
+.shagun-product-image img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--jp-ease)}
+.shagun-product-card:hover .shagun-product-image img{transform:scale(1.065)}
+.shagun-product-index{position:absolute;z-index:1;left:17px;top:17px;padding:8px 10px;background:rgba(16,30,57,.85);color:#fff;border:1px solid rgba(255,255,255,.24);border-radius:99px;font-size:8px;font-weight:800;letter-spacing:.14em}
+.shagun-product-arrow{position:absolute;z-index:1;right:17px;bottom:14px;width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--pink);font-size:18px;transition:transform .3s ease}
+.shagun-product-card:hover .shagun-product-arrow{transform:rotate(45deg)}
+.shagun-product-copy{padding:23px 22px 25px}
+.shagun-product-copy>small{color:var(--gold);font-size:8px;font-weight:800;letter-spacing:.17em}
+.shagun-product-copy h3{margin:9px 0 9px;font-size:19px}
+.shagun-product-copy p{min-height:72px;margin:0 0 18px;color:var(--muted);font-size:12px;line-height:1.8}
+.shagun-product-copy>a{display:inline-flex;gap:8px;align-items:center;color:var(--pink);font-size:11px;font-weight:800;letter-spacing:.04em}
+.shagun-product-copy>a span{transition:transform .25s ease}
+.shagun-product-copy>a:hover span{transform:translate(3px,-3px)}
+.shagun-amazon-note{margin:20px 0 0;color:var(--muted);font-size:10px}
+.shagun-story{padding:82px 0;background:linear-gradient(110deg,#0c1831,#1b2f51 62%,#101e39);color:#fff;overflow:hidden;position:relative;isolation:isolate}
+.shagun-story:before{content:'';position:absolute;z-index:-1;right:-100px;top:-210px;width:560px;height:560px;border:1px solid rgba(240,200,139,.18);border-radius:50%;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 95px rgba(223,11,116,.035)}
+.shagun-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.shagun-story-image{height:420px;position:relative;border:1px solid rgba(240,200,139,.55);padding:9px;border-radius:22px;overflow:hidden}
+.shagun-story-image img{width:100%;height:100%;object-fit:cover;border-radius:15px;transition:transform .9s var(--jp-ease)}
+.shagun-story-image:hover img{transform:scale(1.045)}
+.shagun-story-image span{position:absolute;left:22px;bottom:22px;padding:10px 13px;border-radius:99px;background:rgba(16,30,57,.83);color:#f3d6a6;font-size:8px;letter-spacing:.15em;font-weight:800}
+.shagun-story-copy h2{color:#fff;margin:13px 0}
+.shagun-story-copy h2 em{color:#f0c88b}
+.shagun-story-copy p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.9}
+.shagun-story-copy .eyebrow{color:#ffafd0}
+.shagun-final{padding:65px 0}
+.shagun-final-card{display:flex;align-items:center;gap:27px;padding:31px 35px;background:linear-gradient(105deg,#f7eaf0,#f4eee3);border:1px solid rgba(184,134,70,.22);border-radius:23px;box-shadow:0 18px 50px rgba(16,30,57,.06)}
+.shagun-final-monogram{width:75px;height:75px;flex:none;border:1px solid rgba(184,134,70,.6);border-radius:50%;display:grid;place-items:center;color:var(--navy);font:600 29px 'Playfair Display',serif;background:rgba(255,255,255,.65)}
+.shagun-final-card>div{flex:1}
+.shagun-final-card h2{margin:8px 0 5px;font-size:clamp(22px,2.8vw,33px)}
+.shagun-final-card p{margin:0;color:var(--muted);font-size:12px}
+@media(max-width:900px){
+  .shagun-hero-grid{gap:30px}
+  .shagun-product-grid{gap:14px}
+  .shagun-product-image{height:220px}
+  .shagun-story-grid{gap:35px}
+}
+@media(max-width:780px){
+  .shagun-hero{padding-top:44px}
+  .shagun-hero-grid,.shagun-intro-grid,.shagun-story-grid{grid-template-columns:1fr;gap:32px}
+  .shagun-hero-grid{min-height:0;padding-bottom:42px}
+  .shagun-hero-copy{padding-bottom:0}
+  .shagun-hero-art{min-height:355px}
+  .shagun-image-frame{height:340px;width:min(88%,400px)}
+  .orbit-one{width:390px;height:390px}
+  .orbit-two{width:435px;height:435px}
+  .shagun-art-label{left:0;bottom:10px}
+  .shagun-seal{right:0;top:14px;width:65px;height:65px}
+  .shagun-hero-bottom{font-size:7px;letter-spacing:.1em;padding:14px 16px}
+  .shagun-intro-grid{justify-items:start}
+  .shagun-intro-mark{width:135px;height:135px}
+  .shagun-intro-mark span{font-size:42px}
+  .shagun-product-grid{grid-template-columns:1fr;gap:18px}
+  .shagun-product-image{height:245px}
+  .shagun-product-copy p{min-height:0}
+  .shagun-story{padding:58px 0}
+  .shagun-story-image{height:320px}
+  .shagun-final-card{align-items:flex-start;flex-direction:column;padding:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .shagun-hero:before,.orbit-one,.orbit-two,.shagun-intro-mark:after,.shagun-seal,.shagun-art-label{animation:none!important}
+  .shagun-image-frame img,.shagun-product-image img,.shagun-story-image img{transition:none!important}
+}
