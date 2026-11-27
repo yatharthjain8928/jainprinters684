@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title desc">
+  <title id="title">Jain Printers AI mascot</title>
+  <desc id="desc">A friendly ivory and navy robot with magenta and gold details, waving hello.</desc>
+  <defs>
+    <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9eb"/><stop offset=".55" stop-color="#eee1c8"/><stop offset="1" stop-color="#c9b18d"/></linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#293e67"/><stop offset=".55" stop-color="#101d3a"/><stop offset="1" stop-color="#081329"/></linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff79bd"/><stop offset=".55" stop-color="#e30a75"/><stop offset="1" stop-color="#a90054"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0b0"/><stop offset=".45" stop-color="#d9aa4f"/><stop offset="1" stop-color="#936020"/></linearGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#10294b"/><stop offset="1" stop-color="#030b1b"/></linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="190%"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <style>
+    .float{transform-box:fill-box;transform-origin:center;animation:jpFloat 3.4s ease-in-out infinite}
+    .wave{transform-box:fill-box;transform-origin:82% 86%;animation:jpWave 2.2s ease-in-out infinite}
+    .spark{transform-box:fill-box;transform-origin:center;animation:jpSpark 2.4s ease-in-out infinite}
+    @keyframes jpFloat{0%,100%{transform:translateY(1px)}50%{transform:translateY(-5px)}}
+    @keyframes jpWave{0%,100%{transform:rotate(0)}18%,48%{transform:rotate(-13deg)}32%{transform:rotate(8deg)}}
+    @keyframes jpSpark{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1.12)}}
+    @media(prefers-reduced-motion:reduce){.float,.wave,.spark{animation:none}}
+  </style>
+  <g class="spark" fill="none" stroke="#e9b9d0" stroke-linecap="round" stroke-width="5">
+    <path d="M30 74v15M22.5 81.5h15"/>
+    <path d="M222 53v13M215.5 59.5h13" stroke="#d6ac5b"/>
+    <path d="M224 143v10M219 148h10" stroke="#e30a75"/>
+  </g>
+  <ellipse cx="130" cy="244" rx="76" ry="9" fill="#101d3a" opacity=".12"/>
+  <g class="float" filter="url(#shadow)">
+    <!-- Body and scarf -->
+    <path d="M73 151Q76 139 93 136H168Q186 141 190 158L202 226Q203 239 190 241H69Q56 239 59 226Z" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+    <path d="M78 164Q130 187 183 160L189 183Q135 207 70 181Z" fill="url(#pink)" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M83 180Q69 197 57 225Q53 236 43 228L37 223Q58 191 67 176Z" fill="url(#pink)" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M106 150l24 13 24-13" fill="none" stroke="#ffe4a0" stroke-width="3" opacity=".8"/>
+    <path d="M113 192l17 7 17-7" fill="none" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M121 206l9-5 9 5-9 14Z" fill="url(#gold)" stroke="#fff0be" stroke-width="1.5"/>
+    <!-- Arms -->
+    <path d="M73 165Q52 165 43 183L39 196Q35 207 45 210Q55 213 59 201L69 188 85 184Z" fill="url(#shell)" stroke="url(#gold)" stroke-width="3"/>
+    <g class="wave">
+      <path d="M184 166Q204 155 210 139L218 117Q222 104 233 108Q244 112 238 126L231 153Q224 176 199 190Z" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+      <path d="M218 111Q210 96 215 82L220 68Q224 57 235 61Q246 65 241 77L238 90Q236 99 245 103L249 109Q253 119 244 124Q231 131 218 111Z" fill="url(#shell)" stroke="url(#gold)" stroke-width="3"/>
+      <path d="M225 67l-1-10M235 66l3-10M243 73l8-5" stroke="#fff2c9" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="229" cy="101" r="5" fill="url(#pink)"/>
+    </g>
+    <!-- Neck -->
+    <rect x="109" y="133" width="43" height="21" rx="10" fill="url(#shell)" stroke="url(#gold)" stroke-width="3"/>
+    <!-- Head -->
+    <path d="M51 88Q50 38 91 27Q129 13 169 27Q209 40 211 89L207 121Q203 151 177 158H83Q56 151 52 122Z" fill="url(#shell)" stroke="url(#gold)" stroke-width="4"/>
+    <path d="M62 69Q83 19 144 23Q177 21 198 52L188 65Q145 48 108 56Q83 60 62 79Z" fill="url(#navy)" stroke="#d5b36c" stroke-width="3"/>
+    <path d="M108 23Q130 5 151 23L143 36H116Z" fill="url(#pink)" stroke="url(#gold)" stroke-width="2"/>
+    <!-- Ear pods -->
+    <rect x="36" y="76" width="25" height="60" rx="12" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+    <rect x="40" y="91" width="8" height="29" rx="4" fill="url(#pink)"/>
+    <rect x="201" y="76" width="25" height="60" rx="12" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+    <rect x="214" y="91" width="8" height="29" rx="4" fill="url(#pink)"/>
+    <!-- Visor -->
+    <rect x="63" y="65" width="134" height="78" rx="34" fill="url(#visor)" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M75 78Q130 61 183 78" fill="none" stroke="#fff" stroke-width="2" opacity=".17"/>
+    <path d="M91 101q10-15 20 0" fill="none" stroke="#5de6ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M147 101q10-15 20 0" fill="none" stroke="#5de6ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M115 119q16 15 32 0" fill="none" stroke="#ff80c2" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="82" cy="119" r="4" fill="#ff8bc8" opacity=".8"/>
+    <circle cx="178" cy="119" r="4" fill="#ff8bc8" opacity=".8"/>
+    <!-- Chest badge -->
+    <circle cx="130" cy="169" r="14" fill="#f5ead4" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M124 174v-11l6 4 6-4v11" fill="none" stroke="#df0b74" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M33 241q97 14 194 0" fill="none" stroke="#d4ad64" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+</svg>
