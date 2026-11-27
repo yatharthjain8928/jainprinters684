@@ -125,3 +125,41 @@
   .shagun-hero:before,.orbit-one,.orbit-two,.shagun-intro-mark:after,.shagun-seal,.shagun-art-label{animation:none!important}
   .shagun-image-frame img,.shagun-product-image img,.shagun-story-image img{transition:none!important}
 }
+
+/* Real Jain Shagun products, prices and launch badge */
+.shagun-kicker-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.shagun-new-tag{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid rgba(240,200,139,.65);border-radius:99px;background:rgba(223,11,116,.16);color:#ffe4bc;font-size:9px;font-weight:900;letter-spacing:.14em;box-shadow:0 0 0 0 rgba(223,11,116,.4);animation:shagunTagPulse 2.4s ease-out infinite}
+.shagun-new-tag b{color:#ffafd0;animation:shagunSparkle 1.6s ease-in-out infinite}
+@keyframes shagunTagPulse{0%{box-shadow:0 0 0 0 rgba(223,11,116,.38)}70%{box-shadow:0 0 0 10px rgba(223,11,116,0)}100%{box-shadow:0 0 0 0 rgba(223,11,116,0)}}
+@keyframes shagunSparkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(1.28) rotate(18deg);opacity:.7}}
+.shagun-image-frame{background:#fff}
+.shagun-image-frame img{object-fit:contain;background:#fff;border-radius:170px 170px 20px 20px}
+.shagun-product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.shagun-product-card{display:flex;flex-direction:column}
+.shagun-product-image{height:245px;background:#fff;display:grid;place-items:center}
+.shagun-product-image:after{display:none}
+.shagun-product-image img{width:100%;height:100%;padding:14px;object-fit:contain;background:#fff}
+.shagun-product-index{left:12px;top:12px;font-size:7px;padding:7px 9px}
+.shagun-product-copy{display:flex;flex:1;flex-direction:column;padding:20px 18px 22px}
+.shagun-product-copy h3{font-size:17px;line-height:1.35;min-height:46px}
+.shagun-product-copy p{min-height:76px}
+.shagun-price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 17px;padding:11px 12px;border:1px solid rgba(184,134,70,.22);border-radius:12px;background:linear-gradient(100deg,#fbf6ef,#fff)}
+.shagun-price-row span{font-size:8px;font-weight:900;letter-spacing:.16em;color:var(--muted)}
+.shagun-price-row strong{font:700 21px 'Playfair Display',serif;color:var(--navy)}
+.shagun-product-copy>a{margin-top:auto}
+.shagun-catalogue-note{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:30px;padding:25px 28px;border:1px solid rgba(184,134,70,.24);border-radius:18px;background:linear-gradient(110deg,#fff,#f8edf1);box-shadow:0 14px 38px rgba(16,30,57,.06)}
+.shagun-catalogue-eyebrow{color:var(--pink);font-size:8px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.shagun-catalogue-note h3{margin:7px 0 5px;color:var(--navy);font:700 23px 'Playfair Display',serif}
+.shagun-catalogue-note p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.shagun-catalogue-cta{flex:none;display:inline-flex;align-items:center;gap:12px;padding:13px 17px;border-radius:99px;background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.04em;box-shadow:0 9px 22px rgba(16,30,57,.15)}
+.shagun-catalogue-cta span{color:#f0c88b}
+.shagun-story-image img{object-fit:contain;background:#fff}
+@media(max-width:1100px){.shagun-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){
+  .shagun-product-grid{grid-template-columns:1fr}
+  .shagun-product-image{height:270px}
+  .shagun-product-copy h3{min-height:0}
+  .shagun-product-copy p{min-height:0}
+  .shagun-catalogue-note{align-items:flex-start;flex-direction:column;padding:22px}
+}
+@media(prefers-reduced-motion:reduce){.shagun-new-tag,.shagun-new-tag b{animation:none!important}}
