@@ -35,3 +35,48 @@
 @media(max-width:1000px){.nav-links{gap:12px;font-size:11px}.nav-cta{display:none}.brand{min-width:180px}.cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:780px){.nav{min-height:72px;padding:8px 18px}.brand img{width:52px;height:52px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);padding:14px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 18px 24px rgba(16,30,57,.08);flex-direction:column;align-items:stretch;gap:4px}.nav-links.open{display:flex}.nav-links a{padding:10px 0;border-bottom:1px solid rgba(16,30,57,.06)}.nav-links a.active:after{display:none}.container{width:min(var(--max),calc(100% - 34px))}.hero{padding:38px 0 50px}.hero-grid,.two-col,.dark-grid,.founder-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.hero-art{padding:0 5px 20px}.hero-art img{height:365px}.hero-chip{left:-2px;bottom:27px}.hero-year{right:0;top:18px}.section{padding:62px 0}.section-head{display:block}.section-head .lead{margin-top:12px}.strip-grid{grid-template-columns:1fr 1fr}.strip-item{padding:16px 8px;border-bottom:1px solid var(--line)}.strip-item:first-child{padding-left:8px}.strip-item:nth-child(2){border-right:0}.strip-item:nth-child(3){border-bottom:0}.strip-item:nth-child(4){border-bottom:0;border-right:0}.cards{grid-template-columns:1fr 1fr;gap:12px}.card img{height:160px}.card-body{padding:15px}.card-body h3{font-size:15px}.card-body p{font-size:11px}.image-stack{min-height:380px}.image-stack .main-img{height:320px}.image-stack .over-img{height:145px}.dark-grid img{height:300px}.founder-visual{min-height:420px;padding:20px}.founder-main{height:325px;width:76%}.founder-press{height:160px;left:12px;bottom:38px}.founder-caption{right:12px;bottom:15px}.gallery{grid-template-columns:1fr 1fr;gap:10px}.gallery-item,.gallery-item img{min-height:160px}.feature-img{height:300px}.video-panel video{height:320px}.contact-card,.quote-card{padding:21px}.map-head{display:block}.map-head .btn{margin-top:12px}.map-box{height:300px}.cta-panel{display:block}.cta-panel .btn{margin-top:18px}.footer-top,.footer-bottom{display:block}.footer-links{margin-top:24px;gap:14px}.footer-bottom span{display:block;margin-top:9px}.wa-float{width:58px;height:58px;right:14px;bottom:14px}}
 @media(max-width:430px){.cards{grid-template-columns:1fr}.card img{height:205px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero-art img{height:315px}.founder-visual{min-height:380px}.founder-main{height:290px}.founder-press{height:135px}.founder-caption b{font-size:13px}.banner{padding:45px 0}.banner h1{font-size:39px}.bullets{grid-template-columns:1fr}}
+
+
+/* Floating Instagram shortcut */
+.ig-float{
+  position:fixed;
+  z-index:120;
+  right:94px;
+  bottom:22px;
+  width:62px;
+  height:62px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:linear-gradient(145deg,#833ab4 0%,#e1306c 48%,#fd1d1d 72%,#fcb045 100%);
+  border:3px solid #fff;
+  border-radius:50%;
+  box-shadow:0 12px 28px rgba(193,53,132,.3);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.ig-float svg{width:29px;height:29px}
+.ig-float:hover{
+  transform:translateY(-4px) scale(1.04);
+  box-shadow:0 16px 34px rgba(193,53,132,.4);
+}
+.ig-float:after{
+  content:'';
+  position:absolute;
+  inset:-7px;
+  border:1px solid rgba(225,48,108,.38);
+  border-radius:50%;
+  animation:igPulse 2.4s ease-out infinite;
+  pointer-events:none;
+}
+@keyframes igPulse{
+  0%{transform:scale(.92);opacity:.8}
+  100%{transform:scale(1.34);opacity:0}
+}
+@media(max-width:780px){
+  .ig-float{right:82px;bottom:14px;width:58px;height:58px}
+  .ig-float svg{width:27px;height:27px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ig-float{transition:none}
+  .ig-float:after{animation:none}
+}
