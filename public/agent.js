@@ -41,12 +41,20 @@ async function ask(text){
   let reply='';
   try{
     const res=await fetch('/api/chat',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({messages:history})});
-    if(!res.ok||!res.body)throw new Error('bad response');
+    if(!res.ok||!res.body){
+      const detail=await res.text().catch(()=> '');
+      if(res.status===503 && detail.includes('ANTHROPIC_API_KEY'))throw new Error('missing_api_key');
+      throw new Error('bad response');
+    }
     const reader=res.body.getReader(),dec=new TextDecoder();
     while(true){const {done,value}=await reader.read();if(done)break;reply+=dec.decode(value,{stream:true});bot.innerHTML=md(reply);log.scrollTop=log.scrollHeight;}
     if(!reply.trim())throw new Error('empty');
   }catch(e){
-    reply=`Sorry, I couldn't connect just now. You can reach Jain Printers directly on [WhatsApp](${WA}) or call +91 92144 95684.`;
+    if(e.message==='missing_api_key'){
+      reply=`The Jain Printers AI Assistant is temporarily being configured. Please contact our team directly on [WhatsApp](${WA}) or call +91 92144 95684.`;
+    }else{
+      reply=`Sorry, I couldn't connect just now. You can reach Jain Printers directly on [WhatsApp](${WA}) or call +91 92144 95684.`;
+    }
     bot.innerHTML=md(reply);
   }
   history.push({role:'assistant',content:reply});save();
