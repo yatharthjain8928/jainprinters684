@@ -80,3 +80,350 @@
   .ig-float{transition:none}
   .ig-float:after{animation:none}
 }
+
+
+/* =========================================================
+   JAIN PRINTERS — PREMIUM MOTION & VISUAL FINISHING LAYER
+   ========================================================= */
+:root{
+  --jp-ease:cubic-bezier(.22,.72,.18,1);
+  --jp-glass:rgba(255,255,255,.72);
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 8% 18%,rgba(223,11,116,.035),transparent 28rem),
+    radial-gradient(ellipse at 92% 48%,rgba(0,164,217,.035),transparent 30rem),
+    var(--paper);
+}
+a,button{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid rgba(223,11,116,.55);outline-offset:4px}
+
+/* Slim CMYK reading-progress line */
+.site-progress{
+  position:fixed;
+  z-index:999;
+  inset:0 auto auto 0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,var(--cyan) 0 27%,var(--pink) 27% 58%,var(--yellow) 58% 79%,var(--navy) 79%);
+  transform:scaleX(0);
+  transform-origin:left center;
+  box-shadow:0 1px 8px rgba(16,30,57,.12);
+  pointer-events:none;
+}
+
+/* Brand identity details */
+.brand img{transition:transform .65s var(--jp-ease),filter .65s var(--jp-ease)}
+.brand:hover img{transform:rotate(-5deg) scale(1.055);filter:drop-shadow(0 7px 10px rgba(16,30,57,.15))}
+.nav-shell{transition:box-shadow .35s ease,background .35s ease}
+.nav-cta{position:relative;overflow:hidden;isolation:isolate}
+.nav-cta:after,.btn:after{
+  content:'';
+  position:absolute;
+  inset:-30% auto -30% -45%;
+  width:34%;
+  transform:skewX(-24deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  transition:left .7s var(--jp-ease);
+  z-index:-1;
+}
+.nav-cta:hover:after,.btn:hover:after{left:125%}
+.btn,.nav-cta{transition:transform .3s var(--jp-ease),box-shadow .3s var(--jp-ease),background .3s ease}
+.btn:hover,.nav-cta:hover{transform:translateY(-3px);box-shadow:0 15px 32px rgba(16,30,57,.17)}
+.btn-pink:hover{background:#c90868}
+
+/* Hero: animated print-registration rings and floating proof points */
+.hero{isolation:isolate}
+.hero:before{
+  animation:jpOrbit 34s linear infinite;
+  transform-origin:55% 50%;
+}
+.hero:after{
+  content:'';
+  position:absolute;
+  z-index:-1;
+  left:-100px;
+  bottom:10px;
+  width:360px;
+  height:130px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(223,11,116,.055),transparent 68%);
+  filter:blur(10px);
+  animation:jpAmbient 9s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+.hero-art{isolation:isolate}
+.hero-art:before{
+  content:'';
+  position:absolute;
+  z-index:0;
+  top:-16px;
+  right:-16px;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  border:1px solid rgba(184,134,70,.38);
+  background:
+    radial-gradient(circle at center,transparent 48%,rgba(184,134,70,.1) 49% 50%,transparent 51%),
+    repeating-conic-gradient(from 0deg,rgba(223,11,116,.42) 0 1.1deg,transparent 1.1deg 30deg);
+  opacity:.62;
+  animation:jpOrbit 30s linear infinite;
+  pointer-events:none;
+}
+.hero-art:after{
+  content:'CMYK  /  MADE TO IMPRESS';
+  position:absolute;
+  z-index:2;
+  top:10px;
+  left:-2px;
+  padding:10px 14px;
+  border:1px solid rgba(184,134,70,.24);
+  border-radius:999px;
+  color:var(--navy);
+  background:rgba(255,255,255,.88);
+  box-shadow:0 8px 24px rgba(16,30,57,.09);
+  backdrop-filter:blur(12px);
+  font:800 8px/1 Manrope,sans-serif;
+  letter-spacing:.16em;
+  animation:jpFloat 5.8s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero-art img{
+  position:relative;
+  z-index:1;
+  transition:transform 1s var(--jp-ease),filter .8s ease,box-shadow .8s ease;
+}
+.hero-art:hover img{transform:translateY(-4px) scale(1.012);filter:saturate(1.06);box-shadow:0 30px 85px rgba(16,30,57,.19)}
+.hero-chip{animation:jpFloat 6s ease-in-out infinite}
+.hero-year{overflow:hidden;animation:jpFloat 7s ease-in-out infinite reverse}
+.hero-year:after{
+  content:'';
+  position:absolute;
+  inset:-40% auto -40% -65%;
+  width:45%;
+  transform:skewX(-24deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  animation:jpBadgeShine 6s ease-in-out infinite;
+}
+.eyebrow:before{animation:jpEyebrow 3.2s ease-in-out infinite alternate}
+
+/* The service strip feels like an editorial set of credentials */
+.strip{position:relative;overflow:hidden;background:linear-gradient(105deg,#fff 0%,#fbf8f6 50%,#fff 100%)}
+.strip:after{
+  content:'';
+  position:absolute;
+  top:0;bottom:0;left:-25%;
+  width:22%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.88),transparent);
+  transform:skewX(-18deg);
+  animation:jpStripSweep 11s ease-in-out infinite;
+  pointer-events:none;
+}
+.strip-item{position:relative;z-index:1;transition:background .3s ease,transform .35s var(--jp-ease)}
+.strip-item:hover{background:rgba(255,255,255,.8);transform:translateY(-3px)}
+.strip-icon{transition:transform .45s var(--jp-ease),box-shadow .45s ease}
+.strip-item:hover .strip-icon{transform:rotate(-8deg) scale(1.12);box-shadow:0 7px 18px rgba(16,30,57,.11)}
+
+/* Service cards: elevated photography and a moving print gloss */
+.card{
+  position:relative;
+  isolation:isolate;
+  transition:transform .5s var(--jp-ease),box-shadow .5s ease,border-color .35s ease;
+}
+.card:after{
+  content:'';
+  position:absolute;
+  z-index:3;
+  top:-20%;
+  bottom:-20%;
+  left:-75%;
+  width:42%;
+  transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);
+  pointer-events:none;
+}
+.card:hover:after{animation:jpCardShine .95s var(--jp-ease) both}
+.card img{transition:transform .85s var(--jp-ease),filter .65s ease}
+.card:hover img{transform:scale(1.045);filter:saturate(1.08) contrast(1.02)}
+.card-body{position:relative}
+.card-body h3{transition:color .3s ease}
+.card:hover .card-body h3{color:var(--pink)}
+.text-link{display:inline-flex;align-items:center;gap:5px;transition:letter-spacing .3s ease,color .3s ease}
+.text-link:hover{letter-spacing:.1em;color:#b70760}
+
+/* Section headings and image treatments */
+.section-head h2{position:relative}
+.section-head h2:after{
+  content:'';
+  display:block;
+  width:54px;
+  height:3px;
+  margin-top:17px;
+  border-radius:5px;
+  background:linear-gradient(90deg,var(--pink),var(--gold),transparent);
+  transform-origin:left;
+  transition:width .5s var(--jp-ease);
+}
+.section-head:hover h2:after{width:96px}
+.image-stack,.founder-visual{isolation:isolate}
+.image-stack:after,.founder-visual:after{
+  content:'';
+  position:absolute;
+  z-index:0;
+  right:14px;
+  top:14px;
+  width:80px;
+  height:80px;
+  border-top:1px solid rgba(184,134,70,.65);
+  border-right:1px solid rgba(184,134,70,.65);
+  border-radius:0 19px 0 0;
+  pointer-events:none;
+}
+.image-stack img,.founder-visual img{transition:transform .8s var(--jp-ease),filter .6s ease}
+.image-stack:hover .main-img,.founder-visual:hover .founder-main{transform:scale(1.025);filter:saturate(1.06)}
+.feature-img{transition:transform .8s var(--jp-ease),filter .8s ease,box-shadow .8s ease}
+.feature-img:hover{transform:translateY(-4px);filter:saturate(1.06);box-shadow:0 28px 75px rgba(16,30,57,.2)}
+
+/* Premium dark banners: soft orbital geometry and luminous edge */
+.banner{
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 82% 16%,rgba(223,11,116,.20),transparent 20rem),
+    radial-gradient(circle at 20% 110%,rgba(0,164,217,.16),transparent 24rem),
+    linear-gradient(115deg,#0b1730,#1c3154 62%,#101e39);
+}
+.banner:before{
+  content:'';
+  position:absolute;
+  z-index:-1;
+  right:9%;
+  top:-155px;
+  width:390px;
+  height:390px;
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:50%;
+  box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.018),0 0 0 95px rgba(223,11,116,.035);
+  animation:jpOrbit 42s linear infinite;
+  pointer-events:none;
+}
+.banner:after{animation:jpBannerDrift 10s ease-in-out infinite alternate}
+.banner .container{position:relative;z-index:1}
+.banner .eyebrow{color:#ffafd0}
+.banner .eyebrow:before{background:linear-gradient(90deg,#ffafd0,var(--gold))}
+
+/* Dark feature band and quote panels */
+.dark-band{
+  background:
+    radial-gradient(ellipse at 80% 20%,rgba(223,11,116,.12),transparent 24rem),
+    radial-gradient(ellipse at 8% 95%,rgba(0,164,217,.1),transparent 22rem),
+    var(--navy);
+}
+.dark-band:before{
+  content:'';
+  position:absolute;
+  right:12%;
+  top:50%;
+  width:230px;
+  height:230px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+  box-shadow:0 0 0 23px rgba(255,255,255,.025),0 0 0 50px rgba(255,255,255,.018);
+  transform:translateY(-50%);
+  animation:jpAmbient 12s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+.quote{position:relative;box-shadow:inset 0 0 0 1px rgba(223,11,116,.04)}
+.quote:after{content:'“';position:absolute;right:18px;top:-25px;color:rgba(223,11,116,.13);font:90px/1 'Playfair Display',serif;pointer-events:none}
+.cta-panel{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 92% 20%,rgba(223,11,116,.11),transparent 14rem),
+    linear-gradient(110deg,#f5e9ee,#f7f0e9 58%,#f1e9dd);
+  box-shadow:0 15px 45px rgba(16,30,57,.045);
+}
+.cta-panel:after{
+  content:'JP';
+  position:absolute;
+  z-index:-1;
+  right:20px;
+  bottom:-76px;
+  font:800 190px/1 Manrope,sans-serif;
+  letter-spacing:-.12em;
+  color:rgba(16,30,57,.045);
+  animation:jpAmbient 8s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+
+/* Gallery as a curated portfolio, not a flat grid */
+.gallery-item{
+  box-shadow:0 9px 27px rgba(16,30,57,.07);
+  transition:transform .55s var(--jp-ease),box-shadow .55s ease;
+}
+.gallery-item:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(16,30,57,.18)}
+.gallery-item img{transition:transform .9s var(--jp-ease),filter .7s ease}
+.gallery-item:hover img{transform:scale(1.065);filter:saturate(1.12)}
+.gallery-item:after{
+  content:'';
+  position:absolute;
+  inset:40% 0 0;
+  background:linear-gradient(transparent,rgba(9,20,42,.14));
+  opacity:0;
+  transition:opacity .4s ease;
+  pointer-events:none;
+}
+.gallery-item:hover:after{opacity:1}
+
+/* Contact details feel like interactive touchpoints */
+.contact-row{border-radius:12px;padding-left:10px;padding-right:10px;transition:background .3s ease,transform .3s var(--jp-ease)}
+.contact-row:hover{background:#fbf5f8;transform:translateX(4px)}
+.contact-row i{transition:transform .35s var(--jp-ease)}
+.contact-row:hover i{transform:rotate(-7deg) scale(1.08)}
+.contact-card,.quote-card{transition:transform .5s var(--jp-ease),box-shadow .5s ease}
+.contact-card:hover,.quote-card:hover{transform:translateY(-4px);box-shadow:0 25px 60px rgba(16,30,57,.1)}
+
+/* Scroll reveals: soft lift, sharpen and stagger */
+.reveal{
+  opacity:0;
+  transform:translateY(24px) scale(.992);
+  filter:blur(3px);
+  transition:
+    opacity .8s var(--jp-ease),
+    transform .8s var(--jp-ease),
+    filter .8s var(--jp-ease);
+  transition-delay:var(--reveal-delay,0ms);
+  will-change:opacity,transform;
+}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0);will-change:auto}
+
+/* Motion language */
+@keyframes jpOrbit{to{transform:rotate(360deg)}}
+@keyframes jpAmbient{0%{opacity:.45;scale:.96}100%{opacity:1;scale:1.04}}
+@keyframes jpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes jpBadgeShine{0%,68%{left:-65%;opacity:0}78%{opacity:1}100%{left:140%;opacity:0}}
+@keyframes jpStripSweep{0%,65%{left:-25%;opacity:0}75%{opacity:.7}100%{left:125%;opacity:0}}
+@keyframes jpCardShine{0%{left:-75%}100%{left:140%}}
+@keyframes jpEyebrow{0%{width:24px}100%{width:38px}}
+@keyframes jpBannerDrift{0%{transform:translateY(0)}100%{transform:translateY(-13px)}}
+
+/* Mobile tuning: keep effects lightweight and clear of floating controls */
+@media(max-width:780px){
+  .hero-art:before{width:100px;height:100px;right:-6px;top:-10px}
+  .hero-art:after{top:2px;left:8px;font-size:7px}
+  .hero-art img{height:365px}
+  .banner:before{right:-120px;top:-160px;width:300px;height:300px}
+  .section-head h2:after{margin-top:12px}
+  .reveal{filter:none;transform:translateY(16px)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+}
