@@ -1,7 +1,10 @@
 .jp-agent-launch{position:fixed;z-index:121;right:22px;bottom:100px;display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border:0;border-radius:999px;background:var(--navy);color:#fff;font-family:Manrope,sans-serif;font-size:13px;font-weight:800;box-shadow:0 14px 34px rgba(16,30,57,.28);transition:transform .2s,box-shadow .2s}
 .jp-agent-launch:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(16,30,57,.34)}
-.jp-agent-launch .jp-orb{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 210deg,var(--cyan),var(--pink),var(--yellow),var(--cyan));position:relative}
-.jp-agent-launch .jp-orb:after{content:'✦';position:absolute;inset:4px;border-radius:50%;background:var(--navy);display:grid;place-items:center;font-size:15px;color:#fff}
+.jp-agent-launch .jp-mascot-wrap{width:52px;height:52px;flex:none;display:grid;place-items:center;position:relative;overflow:visible}
+.jp-agent-launch .jp-mascot-icon{width:66px;height:66px;object-fit:contain;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,.24));transform-origin:50% 70%;animation:jpMascotFloat 3.1s ease-in-out infinite}
+.jp-agent-launch:before{content:'';position:absolute;left:9px;top:7px;width:48px;height:48px;border-radius:50%;background:radial-gradient(circle,rgba(227,11,116,.34),rgba(69,188,235,.15) 58%,transparent 72%);filter:blur(5px);pointer-events:none}
+.jp-agent-launch:hover .jp-mascot-icon{animation-duration:1.15s;filter:drop-shadow(0 5px 11px rgba(227,11,116,.35))}
+@keyframes jpMascotFloat{0%,100%{transform:translateY(1px) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
 .jp-agent-launch small{display:block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ffafd0;line-height:1.2}
 .jp-agent-launch span.jp-l{display:block;text-align:left;line-height:1.25}
 .jp-agent-launch.hidden{opacity:0;pointer-events:none;transform:translateY(10px)}
@@ -9,7 +12,7 @@
 .jp-agent.open{opacity:1;pointer-events:auto;transform:none}
 .jp-agent-head{display:flex;align-items:center;gap:12px;padding:16px 16px 14px 18px;background:var(--navy);color:#fff;position:relative}
 .jp-agent-head:after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--cyan) 0 25%,var(--pink) 25% 50%,var(--yellow) 50% 75%,#111 75%)}
-.jp-agent-head img{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+.jp-agent-head img.jp-agent-mascot{width:58px;height:58px;flex:none;object-fit:contain;background:transparent;border-radius:0;padding:0;filter:drop-shadow(0 3px 7px rgba(0,0,0,.2));animation:jpMascotFloat 3.1s ease-in-out infinite}
 .jp-agent-head b{display:block;font-family:Manrope,sans-serif;font-size:15px;letter-spacing:-.01em}
 .jp-agent-head small{display:flex;align-items:center;gap:6px;font-size:11px;color:#c9d2e4}
 .jp-agent-head small:before{content:'';width:7px;height:7px;border-radius:50%;background:#2fd47a}
@@ -36,4 +39,4 @@
 .jp-agent-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 14px 10px;background:#fff;font-size:10.5px;color:var(--muted)}
 .jp-agent-foot a{color:#1a9b53;font-weight:700}
 @media(max-width:780px){.jp-agent-launch{right:14px;bottom:84px;padding:6px}.jp-agent-launch span.jp-l{display:none}.jp-agent{right:0;bottom:0;width:100vw;height:100dvh;border-radius:0}}
-@media(prefers-reduced-motion:reduce){.jp-agent,.jp-agent-launch{transition:none}.jp-typing i{animation:none}}
+@media(prefers-reduced-motion:reduce){.jp-agent,.jp-agent-launch{transition:none}.jp-typing i,.jp-agent-launch .jp-mascot-icon,.jp-agent-head img.jp-agent-mascot{animation:none}}
