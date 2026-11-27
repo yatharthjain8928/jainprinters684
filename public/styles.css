@@ -480,3 +480,34 @@ a,button{-webkit-tap-highlight-color:transparent}
   .shagun-home-grid{grid-template-columns:1fr;gap:30px}
   .shagun-home-image{height:300px;width:min(100%,430px)}
 }
+
+
+/* Premium announcement ticker: reserve a full viewport lane per repeat.
+   This keeps the next message off-canvas until it enters from the right edge. */
+.topline-track{
+  display:flex;
+  width:max-content;
+  will-change:transform;
+  animation:toplineMarquee 26s linear infinite;
+}
+.topline-message{
+  flex:0 0 max(100vw,44rem);
+  width:max(100vw,44rem);
+  min-width:0;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 2.5rem;
+  white-space:nowrap;
+}
+@keyframes toplineMarquee{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+@media(max-width:780px){
+  .topline-track{animation-duration:16s}
+}
+@media(prefers-reduced-motion:reduce){
+  .topline-track{animation:none!important;transform:none!important}
+}
