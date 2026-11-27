@@ -1,6 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const MODEL = "claude-haiku-5-5";
 
 const SYSTEM_PROMPT = `You are "Jain Printers Assistant", the friendly AI helper on the website of Jain Printers, a family printing business in Sangaria, Rajasthan, India, serving customers since 1969.
@@ -72,6 +71,16 @@ export default async function handler(req, res) {
   const messages = sanitize(body?.messages);
   if (!messages) return res.status(400).json({ error: "Please send a message." });
 
+  const apiKey = process.env.ANTHROPIC_API_KEY?.trim();
+  if (!apiKey) {
+    console.error("Jain Printers AI is missing ANTHROPIC_API_KEY in Vercel environment variables.");
+    return res.status(503).send(
+      "The Jain Printers AI Assistant is not connected to its AI service yet. The website administrator needs to add ANTHROPIC_API_KEY in Vercel Environment Variables and redeploy."
+    );
+  }
+
+  const anthropic = new Anthropic({ apiKey });
+
   try {
     const stream = await anthropic.messages.create({
       model: MODEL,
@@ -92,12 +101,15 @@ export default async function handler(req, res) {
     }
     return res.end();
   } catch (error) {
-    console.error("Jain Printers chat error:", error);
+    console.error("Jain Printers chat error:", {
+      status: error?.status ?? null,
+      message: error?.message ?? String(error),
+    });
     if (!res.headersSent) {
       res.status(502);
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       res.setHeader("Cache-Control", "no-store");
     }
-    return res.end("\n\nSorry, I'm having trouble right now. Please reach Jain Printers on WhatsApp at +91 92144 95684.");
+    return res.end("\n\nSorry, the AI assistant is temporarily unavailable. Please reach Jain Printers on WhatsApp at +91 92144 95684.");
   }
 }
