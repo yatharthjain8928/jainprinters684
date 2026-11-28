@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jainprinters684-git-main-yatharjain8928-8964s-projects.vercel.app/sitemap.xml
