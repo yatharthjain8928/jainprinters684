@@ -2,9 +2,6 @@
   "name": "jain-printers",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=24"
-  },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.14.0",
     "@netlify/server": "^0.1.6"
