@@ -514,3 +514,16 @@ a,button{-webkit-tap-highlight-color:transparent}
 
 /* Homepage hero image refresh: restrained branded chip styling and alignment */
 .hero-chip{left:18px;bottom:8px;max-width:230px;background:rgba(16,30,57,.94);color:rgba(255,255,255,.88);border:1px solid rgba(184,134,70,.45);padding:13px 17px;border-radius:14px;box-shadow:0 16px 38px rgba(16,30,57,.22);backdrop-filter:blur(10px);font-size:11px;line-height:1.5;animation:none;z-index:3}.hero-chip b{color:#ffafd0;font-size:15px;letter-spacing:.02em}.hero-year{z-index:3}@media(max-width:780px){.hero-chip{left:10px;bottom:8px;max-width:215px;padding:11px 14px}.hero-chip b{font-size:14px}}
+
+/* Stability and performance refinements */
+@media(max-width:780px){
+  .nav-shell{backdrop-filter:none;background:var(--paper)}
+  .hero:after,.hero-art:before,.hero-art:after,.hero-year:after,.strip:after,.card:after,.banner:before,.dark-band:before,.cta-panel:after{animation:none!important}
+  .card:hover,.contact-card:hover,.quote-card:hover,.gallery-item:hover,.strip-item:hover{transform:none}
+  .card:hover img,.gallery-item:hover img{transform:none;filter:none}
+  .reveal{filter:none!important;will-change:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal.visible{opacity:1!important;transform:none!important;filter:none!important;transition:none!important;will-change:auto}
+}
+.site-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:150;background:linear-gradient(90deg,var(--pink),var(--gold));transform-origin:left;transform:scaleX(0);pointer-events:none}
