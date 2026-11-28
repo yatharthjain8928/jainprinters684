@@ -511,3 +511,6 @@ a,button{-webkit-tap-highlight-color:transparent}
 @media(prefers-reduced-motion:reduce){
   .topline-track{animation:none!important;transform:none!important}
 }
+
+/* Homepage hero image refresh: restrained branded chip styling and alignment */
+.hero-chip{left:18px;bottom:8px;max-width:230px;background:rgba(16,30,57,.94);color:rgba(255,255,255,.88);border:1px solid rgba(184,134,70,.45);padding:13px 17px;border-radius:14px;box-shadow:0 16px 38px rgba(16,30,57,.22);backdrop-filter:blur(10px);font-size:11px;line-height:1.5;animation:none;z-index:3}.hero-chip b{color:#ffafd0;font-size:15px;letter-spacing:.02em}.hero-year{z-index:3}@media(max-width:780px){.hero-chip{left:10px;bottom:8px;max-width:215px;padding:11px 14px}.hero-chip b{font-size:14px}}
